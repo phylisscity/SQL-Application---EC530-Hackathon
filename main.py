@@ -1,6 +1,6 @@
 import pandas as pd
 import sqlite3
-from utils.db_utils import load_csv_to_sqlite
+from utils.db_utils import create_table_from_csv
 
 
 
@@ -13,7 +13,7 @@ def main():
 
     # Connect to SQLite database (creates it if it doesn't exist)
     conn = sqlite3.connect(db_path)
-    load_csv_to_sqlite(csv_path, conn, table_name)
+    create_table_from_csv(csv_path, conn, table_name)
     conn.close()
 
 
